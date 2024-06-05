@@ -1,0 +1,399 @@
+@charset "UTF-8";
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+	text-align: left;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+textarea { font-size: 100%; vertical-align:middle;}
+img { border-style: none; display: block; }
+hr { display: none; }
+em{font-style: normal}
+input{line-height:auto;vertical-align:middle;}
+strong.more{color:#c30}
+a{text-decoration: none;}
+body {
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	background-color: antiquewhite;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.header-inner {
+	height: 60px;
+	background-color: gainsboro;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+/*量端に設定できない*/
+.header-nav {
+	padding: 0 10px 0 650px;
+	font-size: large;
+}
+
+.header-title {
+	font-size: 30px;
+	margin-left: 30px;
+	font-weight: bold;
+}
+
+.header-nav-list {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 20px;
+	
+}
+
+.header-nav-item {
+	margin-left:30px;
+	text-align: center
+}
+.header-nav-item a {
+	text-decoration: none;
+	color: darkgray;
+}
+.header-nav-item-link form input::placeholder {
+	font-size: 15px;
+	padding-left: 10px;
+	display: flex;
+	align-items: center;
+} 
+button {
+	font-size: 20px;
+	margin-left: 2px;
+}
+#movie {
+	display: flex;
+	font-size: 20px;
+}
+.contents {
+	background-color: antiquewhite;
+}
+.main-view {
+	display: flex;
+}
+.main-view img{
+	height: 550px;
+}
+.picture1{
+	width: 50%;
+}
+.picture2 {
+	width: 50%;
+}
+.main-contents {
+	padding-right: 350px;
+	padding-left: 350px;
+	text-align: center;
+}
+.main-contents h1{
+	font-size: 30px;
+}
+.message-point h2{
+	font-size: 20px;
+	background-color: rgb(241, 177, 161);
+}
+.message {
+	padding-bottom: 40px;
+}
+.message-point li {
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+
+.service {
+	padding-bottom: 40px;
+}
+
+.dishes {
+	padding-bottom: 50px;
+	padding-left: 30px;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.dishes-message {
+	display: flex;
+}
+
+.dishes-message img {
+	width: 450px;
+	height: 350px;
+}
+
+.dishes-message p {
+	margin-left: 40px;
+	margin-top: 20px;
+}
+
+.address {
+	display: flex;
+	background-color: black;
+	color: white;
+}
+.address h3 {
+	padding-top: 40px;
+	padding-left: 30px;
+}
+.address ul {
+	padding-left: 10px;
+}
+.address li {
+	margin-bottom: 10px;
+}
+.large {
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 10px;
+}
+.address img {
+	width: 360px;
+	height: 250px;
+	margin: 20px 0px 20px 150px;
+}
+.shops h2 {
+	font-size: 30px;
+	margin: 20px 0 20px 0;
+	text-align: center;
+}
+.shopspic {
+	display: flex;
+	padding-bottom: 40px;
+}
+.shop img {
+	width:150px;
+	height: 150px;
+	border-radius: 100%;
+	margin: 0 80px 0 10px;
+}
+.fa-solid fa-location-dot {
+	font-size: 50px;
+}
+footer {
+	height: 100px;
+	width: 100%;
+	background-color: darkgray;
+	text-align: center;
+}
+
+footer ul {
+	display: flex;
+	justify-content: center;
+	padding: 30px ;
+}
+
+footer li {
+	margin-left: 30px;
+}
+
+.sm-nav{
+	display: none;
+}
+
+@media screen and (max-width:480px) {
+	.header-nav {
+		display: none;
+	}
+/*疑問点：
+・relativeなぜ？
+・*/
+	#hamburger {
+		background-color: transparent;
+		position: relative; 
+		cursor: pointer;
+		margin: 0 0 0 auto;
+		height: 60px;
+		width: 60px;
+	}
+
+	.icon span {
+		position: absolute;
+		left: 15px;
+		width: 30px;
+		height: 4px;
+		background-color: white;
+		border-radius: 8px;
+		transition: ease 0.75s;
+	}
+	.icon span:nth-last-of-type(1) {
+		top: 16px;
+	}
+	.icon span:nth-last-of-type(2){
+		top: 28px;
+	}
+	.icon span:nth-last-of-type(3){
+		bottom: 28px;
+	}
+	.close span:nth-of-type(1) {
+		transform: rotate(45deg);
+		top: 28px;
+	}
+	.close span:nth-of-type(2) {
+		opacity: 0;
+	}
+	.close span:nth-of-type(3) {
+		transform: rotate(-45deg);
+		top: 28px;
+	}
+	.sm-nav {
+		top: 60px;
+		left: 0px;
+		position: absolute;
+		z-index: 10;
+		width: 100%;
+		background-color: darkgray;
+	}
+	.header-nav-item {
+		flex-direction: column;
+	}
+	.header-nav-item-link{
+		text-align: center;
+		border-top: solid 0.5px rgba(255, 255, 255, 0.6);
+	}
+	.contents {
+		width: 100%;
+	}
+	.main-view {
+		display: flex;
+	}
+	.main-view img{
+		height: 550px;
+	}
+	.picture1{
+		width: 50%;
+	}
+	.picture2 {
+		width: 50%;
+	}
+	.main-contents {
+		padding-right: 350px;
+		padding-left: 350px;
+		text-align: center;
+	}
+	.main-contents h1{
+		font-size: 30px;
+	}
+	.message-point h2{
+		font-size: 20px;
+		background-color: rgb(241, 177, 161);
+	}
+	.message {
+		padding-bottom: 40px;
+	}
+	.message-point li {
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+	
+	.service {
+		padding-bottom: 40px;
+	}
+	
+	.dishes {
+		padding-bottom: 50px;
+		padding-left: 30px;
+	}
+	
+	h3 {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	
+	.dishes-message {
+		display: flex;
+	}
+	
+	.dishes-message img {
+		width: 450px;
+		height: 350px;
+	}
+	
+	.dishes-message p {
+		margin-left: 40px;
+		margin-top: 20px;
+	}
+	
+	.address {
+		display: flex;
+		background-color: black;
+		color: white;
+	}
+	.address h3 {
+		padding-top: 40px;
+		padding-left: 30px;
+	}
+	.address ul {
+		padding-left: 10px;
+	}
+	.address li {
+		margin-bottom: 10px;
+	}
+	.large {
+		font-size: 20px;
+		font-weight: bold;
+		padding-left: 10px;
+	}
+	.address img {
+		width: 360px;
+		height: 250px;
+		margin: 20px 0px 20px 150px;
+	}
+	.shops h2 {
+		font-size: 30px;
+		margin: 20px 0 20px 0;
+		text-align: center;
+	}
+	.shopspic {
+		display: flex;
+		padding-bottom: 40px;
+	}
+	.shop img {
+		width:150px;
+		height: 150px;
+		border-radius: 100%;
+		margin: 0 80px 0 10px;
+	}
+	.fa-solid fa-location-dot {
+		font-size: 50px;
+	}
+	footer {
+		height: 100px;
+		width: 100%;
+		background-color: darkgray;
+		text-align: center;
+	}
+	
+	footer ul {
+		display: flex;
+		justify-content: center;
+		padding: 30px ;
+	}
+	
+	footer li {
+		margin-left: 30px;
+	}
+}
