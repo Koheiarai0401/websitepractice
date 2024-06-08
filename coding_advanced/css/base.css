@@ -32,25 +32,28 @@ body {
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
-
+header {
+	width: 100%;
+}
 .header-inner {
 	height: 60px;
 	background-color: gainsboro;
 	position: fixed;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
 	top: 0;
 	left: 0;
 	right: 0;
 }
 /*量端に設定できない*/
 .header-nav {
-	padding: 0 10px 0 650px;
+	width: 85%;
 	font-size: large;
 }
 
 .header-title {
+	width: 15%;
 	font-size: 30px;
 	margin-left: 30px;
 	font-weight: bold;
@@ -60,12 +63,11 @@ body {
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 20px;
-	
+	flex-wrap: wrap;
 }
 
 .header-nav-item {
 	margin-left:30px;
-	text-align: center
 }
 .header-nav-item a {
 	text-decoration: none;
@@ -88,21 +90,21 @@ button {
 .contents {
 	background-color: antiquewhite;
 }
-.main-view {
+.slider ul{
+	width: 100%;
+}
+.slider ul{
 	display: flex;
 }
-.main-view img{
-	height: 550px;
-}
-.picture1{
+.slider li{
 	width: 50%;
 }
-.picture2 {
-	width: 50%;
+.slider img{
+	height: 100%;
+	width: 100%;
 }
 .main-contents {
-	padding-right: 350px;
-	padding-left: 350px;
+	margin: 0 20% 0 20%;
 	text-align: center;
 }
 .main-contents h1{
@@ -127,6 +129,8 @@ button {
 .dishes {
 	padding-bottom: 50px;
 	padding-left: 30px;
+	opacity: 0;
+	transition: all 2s;
 }
 
 h3 {
@@ -140,8 +144,8 @@ h3 {
 }
 
 .dishes-message img {
-	width: 450px;
-	height: 350px;
+	width: 50%;
+	height: 100%;
 }
 
 .dishes-message p {
@@ -153,6 +157,9 @@ h3 {
 	display: flex;
 	background-color: black;
 	color: white;
+	justify-content: space-between;
+	opacity: 0;
+	transition: all 2s;
 }
 .address h3 {
 	padding-top: 40px;
@@ -170,9 +177,14 @@ h3 {
 	padding-left: 10px;
 }
 .address img {
-	width: 360px;
-	height: 250px;
-	margin: 20px 0px 20px 150px;
+	width: 50%;
+	height: 50%;
+	margin: 20px 10px 20px 0;
+}
+.shops {
+	width: 100%;
+	opacity: 0;
+	transition: all 2s;
 }
 .shops h2 {
 	font-size: 30px;
@@ -182,6 +194,7 @@ h3 {
 .shopspic {
 	display: flex;
 	padding-bottom: 40px;
+	flex-wrap: wrap;
 }
 .shop img {
 	width:150px;
@@ -191,6 +204,9 @@ h3 {
 }
 .fa-solid fa-location-dot {
 	font-size: 50px;
+}
+.fadeIn {
+	opacity: 1;
 }
 footer {
 	height: 100px;
@@ -213,20 +229,25 @@ footer li {
 	display: none;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:540px) {
 	.header-nav {
 		display: none;
 	}
 /*疑問点：
 ・relativeなぜ？
 ・*/
-	#hamburger {
-		background-color: transparent;
-		position: relative; 
-		cursor: pointer;
-		margin: 0 0 0 auto;
-		height: 60px;
-		width: 60px;
+	.burger {
+		width: 40px;
+		height: 40px;
+		background-image: url(coding_advanced\img\burger.svg);
+		background-size: 24px;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin: 0 0 0 80px;
+		border-radius: 4px;
+	}
+	.burger :hover{
+		background-color: #ddd;
 	}
 
 	.icon span {
@@ -276,19 +297,72 @@ footer li {
 	.contents {
 		width: 100%;
 	}
-	.main-view {
-		display: flex;
+	.slider ul{
+		position: relative;
+		z-index: 1;
+		height: 100vh;
 	}
-	.main-view img{
-		height: 550px;
+	.slider img {
+		width: 100%;
+		height: 100vh;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
 	}
-	.picture1{
-		width: 50%;
+	.slider .sluck-slide {
+		margin: 0 10px;
 	}
-	.picture2 {
-		width: 50%;
+	.slick-prev,
+	.slick-next {
+		position: absolute;
+		z-index: 3;
+		top: 42%;
+		cursor: pointer;
+		outline: none;
+		border-top: 2px solid #666;
+		border-right: 2px solid #666;
+		height: 25px;
+		width: 25px;
 	}
-	.main-contents {
+	.slick-prev {
+		left: 2.5%;
+		transform: rotate(-135deg);
+	}
+	.slick-next {
+		right: 2.5%;
+		transform: rotate(45deg);
+	}
+	.slick-dots {
+		position: relative;
+		z-index: 3;
+		text-align: center;
+		margin: -50px 0 0 0;
+	}
+	.slick-dots li{
+		display: inline-block;
+		margin: 0.5px;
+	}
+	.slick-dots button{
+		color: transparent;
+		outline: none;
+		width: 8px;
+		height: 8px;
+		display: block;
+		border-radius: 50%;
+		background: #ccc;
+	}
+	.slick-dots .slick-active button{
+		background: #333;
+	}
+	a:hover,
+	a:active{
+		text-decoration: none;
+	}
+	.slider{
+		position: relative;
+	}
+.main-contents {
 		padding-right: 350px;
 		padding-left: 350px;
 		text-align: center;
@@ -321,10 +395,6 @@ footer li {
 		font-size: 20px;
 		font-weight: bold;
 		margin-bottom: 20px;
-	}
-	
-	.dishes-message {
-		display: flex;
 	}
 	
 	.dishes-message img {
