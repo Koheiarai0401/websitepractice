@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./coding_advanced/css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1 class="header-title">Casteria</h1>
+            <div class="header-center"></div>
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+                    <li class="header-nav-item"><a class="header-nav-item-link" href="#"><span>HOME</span></a></li>
+                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">Food</a></li>
+                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">Drink</a></li>
+                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">お問合せ</a></li>
+                    <li class="header-nav-item-search" id="header-nav-search>
+                        <a class="header-nav-item-link" href="#">
+                            <form> 
+                                <input type="search" id="movie" name="q" placeholder="Search">
+                            </form>
+                        </a>
+                        <button class="search-button">search</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="burger-border">
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $('.burger').on('click', function() {
+                        $('.header-nav').toggleClass('active');
+                    });
+                });
+            </script>
+        </div>
+    </header>
+    <div class="contents">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="coding_advanced\img\interior.jpg" alt="pic-1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="coding_advanced\img\restaurant.jpg" alt="pic-2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="coding_advanced\img\food.jpg" alt="pic-3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="coding_advanced\img\food2.jpg" alt="pic-4">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <script>
+            const swiper = new Swiper(".swiper",{
+                slidesPerView: 1,
+                breakpoints: {
+                    540: {
+                        slidesPerView: 2,
+                    },
+                },
+                pagination: {
+                    el: ".swiper-pagination"
+                },
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                }
+            });
+        </script>
+        <div class="main-contents">
+            <h1>新型コロナウイルスに対する取り組みの最新情報をご案内</h1>
+            <div class="message">
+                <div class="message-point">
+                    <h2 class="toggle-button">■衛生面に関して</h2>
+                    <ul>
+                        <li>・マスクを着用しての接客</li>
+                        <li>・出勤前の検温の徹底</li>
+                        <li>・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置</li>
+                        <li>・より頻度の高い手洗いの励行</li>
+                        <li>・テーブルにお客様用の消毒用アルコールの設置</li>
+                        <li>・従業員間の距離確保のため、休憩や研修時の客席利用</li>
+                    </ul>
+                </div>
+                <div class="message-point">
+                    <h2 class="toggle-button">■お客様へのご協力のお願い</h2>
+                    <ul>
+                        <li>・店内では、飲食時以外のマスク着用をお願いいたします</li>
+                        <li>・入店時の手指の消毒にご協力ください</li>
+                        <li>・レジに並ぶ際、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください</li>
+                        <li>・多数でのお越しの際は、お1人がまとめてご注文願います（混雑時に入場制限をする場合がございます）</li>
+                        <li>・発熱や体調不良の際はご入店をお控えください</li>
+                    </ul>
+                </div>
+                <div class="message-point">
+                    <div class="service">
+                        <h2 class="toggle-button">■サービスに関して</h2>
+                        <ul>
+                            <li>・直接お渡しする商品の提供、金銭授受時にグローブの着用</li>
+                            <li>・ドリンクやフードのサンプリング中止</li>
+                            <li>・地域活動・イベントの中止</li>
+                            <li>・混雑時間帯の客席の譲り合いへのご協力お願いの実施</li>
+                            <li>・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ</li>
+                            <li>・混雑状況に応じたドライブスルーサービスの一時休止や店内客席利用の制限</li>
+                        </ul>
+                    </div>
+                    <div class="dishes" id="element">
+                        <h3>Signature food</h3>
+                        <div class="dishes-message">
+                            <img src="coding_advanced\img\food.jpg" alt="food-pic-1">
+                            <p>サーモンは刺身やカルパッチョで食べるのがおいしいですが、リッチな気分になれるサーモンステーキがおすすめです。サーモンのおいしさを引き立てる2種のソースも絶品です！</p>
+                        </div>
+                    </div>
+                    <div class="dishes" id="element">
+                        <h3>Our Coffee</h3>
+                        <div class="dishes-message">
+                            <img src="coding_advanced\img\barista.jpg" alt="food-pic-3">
+                            <p>当店のコーヒー豆が厳選して世界中から買い付けています。そして、そのコーヒー豆のおいしさを最大限に引き出すために自社のロースたりーで焙煎しています。</p>
+                        </div>
+                    </div>
+                    <div class="dishes" id="element">
+                        <h3>Our Food</h3>
+                        <div class="dishes-message">
+                            <img src="coding_advanced\img\food3.jpg" alt="food-pic-4">
+                            <p>当店は何よりまずは衛生管理に気を付けています。「安全・安心」をお届けするために日々継続的な努力を惜しみません。</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                $(document).ready(function() {
+                    $('.toggle-button').on('click', function() {
+                        $(this).closest('.message-point').find('ul').slideToggle();
+                    });
+                });
+                </script>
+            </div>
+            <div class="address">
+                <ul>
+                    <li><h3>Address</h3></li>
+                    <li>681 xxxx Drive, xxxxx xxxx #01 - 06 000000</li>
+                    <li>Opening Hours</li>
+                    <li class="large">Mondays - Friday: 10am - 9pm</li>
+                    <li>Saturedays, Sundays & Public Holidays: 9am- 9pm</li>
+                </ul>
+                <div class="add-center"></div>
+                <img src="coding_advanced\img\barista.jpg" alt="coffee-pic">
+            </div>
+            <div class="shops">
+                <h2>店舗一覧</h2>
+                <div class="shopspic">
+                    <div class="shop">
+                        <img src="coding_advanced\img\restaurant2.jpg" alt="pic-1">
+                        <p><i class="fa-solid fa-location-dot"></i>東京都渋谷区xxxxxx xxxxx</p>
+                    </div>
+                    <div class="shop">
+                        <img src="coding_advanced\img\restaurant3.jpg" alt="pic-2">
+                        <p><i class="fa-solid fa-location-dot"></i>千葉県松戸市xxxxx xxxxx</p>
+                    </div>
+                    <div class="shop">
+                        <img src="coding_advanced\img\restaurant4.jpg" alt="pic-3">
+                        <p><i class="fa-solid fa-location-dot"></i>神奈川県横浜市xxxxx xxxx</p>
+                    </div>
+                    <div class="shop">
+                        <img src="coding_advanced\img\restaurant5.jpg" alt="pic-4">
+                        <p><i class="fa-solid fa-location-dot"></i>埼玉県川越市xxxxx xxxx</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function(){
+                    $(window).scroll(function(){
+                        const wHeight = $(window).height();
+                        const wScroll = $(window).scrollTop();
+                        $(".dishes, .address, .shops").each(function(){
+                            const bPosition = $(this).offset().top;
+                            if(wScroll > bPosition - wHeight + 200){
+                                $(this).addClass("fadeIn");
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li>プライバシーポリシー</li>
+            <li>お問合せ</li>
+            <li>運営会社</li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+<!-- #https://gorigoricode.com/html-header-create/
+https://www.support.makeshop.jp/design/?p=4718-->
