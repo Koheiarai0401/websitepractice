@@ -75,7 +75,9 @@ header {
 	display: flex;
 	padding-left: 20px;
 }
-
+.header-nav-item {
+	padding-left: 30px;
+}
 .header-nav-item a {
 	text-decoration: none;
 	color: darkgray;
