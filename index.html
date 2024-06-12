@@ -37,7 +37,6 @@
                     <span></span>
                 </div>
             </div>
-            
             <script>
                 $(document).ready(function() {
                     $('.burger').on('click', function() {
@@ -51,17 +50,21 @@
         <ul class="slider">
             <li><img src="coding_advanced/img/food.jpg" alt="food-pic-1" class="picture1"></li>
             <li><img src="coding_advanced\img\food2.jpg" alt="food-pic-2" class="picture2"></li>
+            <li><img src="coding_advanced\img\food3.jpg" alt="food-pic-3" class="picture3"></li>
+            <li><img src="coding_advanced\img\food4.jpg" alt="food-pic-4" class="picture4"></li>
         </ul>
+        <button class="slick-prev"></button>
+        <button class="slick-next"></button>
         <script>
-            $('.slider').slick({
-                autoplay: true,
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                prevArrow: '<div class="slick-prev"></div>',
-                nextArrow: '<div class="slick-next"></div>',
-                dots: true,
-            });
+  $('.slider').slick({
+    autoplay: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    prevArrow: '<div class="slick-prev"></div>',
+    nextArrow: '<div class="slick-next"></div>',
+    dots: true,
+    });
         </script>
         <div class="main-contents">
             <h1>新型コロナウイルスに対する取り組みの最新情報をご案内</h1>
