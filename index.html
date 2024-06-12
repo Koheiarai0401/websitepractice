@@ -16,76 +16,51 @@
             <div class="header-center"></div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
-                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">HOME</a></li>
+                    <li class="header-nav-item"><a class="header-nav-item-link" href="#"><span>HOME</span></a></li>
                     <li class="header-nav-item"><a class="header-nav-item-link" href="#">Food</a></li>
                     <li class="header-nav-item"><a class="header-nav-item-link" href="#">Drink</a></li>
                     <li class="header-nav-item"><a class="header-nav-item-link" href="#">お問合せ</a></li>
-                    <li class="header-nav-item">
+                    <li class="header-nav-item-search" id="header-nav-search>
                         <a class="header-nav-item-link" href="#">
                             <form>
                                 <input type="search" id="movie" name="q" placeholder="Search">
                             </form>
                         </a>
+                        <button class="search-button">search</button>
                     </li>
-                    <li> <button>search</button> </li>
                 </ul>
             </nav>
-<!--参考資料：https://hakenblog.com/hamburger-menu/-->
-            <div class="burger"></div>
-                <div class="icon">
+            <div class="burger-border">
+                <div class="burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-            <nav class="sm-nav">
-                <ul class="header-nav-list">
-                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">HOME</a></li>
-                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">Food</a></li>
-                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">Drink</a></li>
-                    <li class="header-nav-item"><a class="header-nav-item-link" href="#">お問合せ</a></li>
-                    <li class="header-nav-item">
-                        <a class="header-nav-item-link" href="#">
-                            <form>
-                                <input type="search" id="movie" name="q" placeholder="Search">
-                            </form>
-                        </a>
-                    </li>
-                    <li><button>search</button></li>
-                </ul>
-            </nav>
+            </div>
+            
+            <script>
+                $(document).ready(function() {
+                    $('.burger').on('click', function() {
+                        $('.header-nav').toggleClass('active');
+                    });
+                });
+            </script>
         </div>
     </header>
-    <script>
-        $('hamburger').on('click', function(){
-            $('icon').toggleClass('close');
-            $('.sm-nav').slideToggle();
-        });
-    </script>
     <div class="contents">
-        <div class="slider">
-            <ul>
-                <li><img src="coding_advanced\img\food.jpg" alt="food-pic-1" class="picture1"></li>
-                <li><img src="coding_advanced\img\food2.jpg" alt="food-pic-2" class="picture2"></li>
-            </ul>
-        </div>
+        <ul class="slider">
+            <li><img src="coding_advanced/img/food.jpg" alt="food-pic-1" class="picture1"></li>
+            <li><img src="coding_advanced\img\food2.jpg" alt="food-pic-2" class="picture2"></li>
+        </ul>
         <script>
-            $('.slider ul').slick({
-                autoplay: ture,
-                autoplaySPeed:3000,
-                speed:1000,
-                infinite: ture,
-                slidesToshow:1,
-                slidesToScroll:1,
-                arrows: ture,
-                prevArrow:'<div class="slick-prev"></div>',
-                nextArrow:'<div class="slick-next"></div>',
+            $('.slider').slick({
+                autoplay: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<div class="slick-prev"></div>',
+                nextArrow: '<div class="slick-next"></div>',
                 dots: true,
-                pauseOnFocus:false,
-                pauseOnHover:false,
-                pauseOnDotsHover:false,
-            });
-            $('.slider ul').on('touchmove', function(event, slick, currentSlide, nextSlide){
-                $('this').slick('slickPlay');
             });
         </script>
         <div class="main-contents">

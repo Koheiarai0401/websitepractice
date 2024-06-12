@@ -46,7 +46,7 @@ header {
 	left: 0;
 	right: 0;
 }
-/*量端に設定できない*/
+
 .header-nav {
 	width: 85%;
 	font-size: large;
@@ -64,11 +64,21 @@ header {
 	justify-content: flex-end;
 	margin-right: 20px;
 	flex-wrap: wrap;
+	text-align: center;
 }
 
 .header-nav-item {
 	margin-left:30px;
+	text-align: center;
 }
+.header-nav-item-link span{
+	color: #333;
+}
+.header-nav-item-search {
+	display: flex;
+	margin-left: 20px;
+}
+
 .header-nav-item a {
 	text-decoration: none;
 	color: darkgray;
@@ -90,10 +100,8 @@ button {
 .contents {
 	background-color: antiquewhite;
 }
-.slider ul{
+.slider {
 	width: 100%;
-}
-.slider ul{
 	display: flex;
 }
 .slider li{
@@ -146,11 +154,11 @@ h3 {
 .dishes-message img {
 	width: 50%;
 	height: 100%;
+	margin-right: 40px;
 }
 
 .dishes-message p {
-	margin-left: 40px;
-	margin-top: 20px;
+	margin-top:20px;
 }
 
 .address {
@@ -179,7 +187,6 @@ h3 {
 .address img {
 	width: 50%;
 	height: 50%;
-	margin: 20px 10px 20px 0;
 }
 .shops {
 	width: 100%;
@@ -233,138 +240,190 @@ footer li {
 	.header-nav {
 		display: none;
 	}
-/*疑問点：
-・relativeなぜ？
-・*/
-	.burger {
-		width: 40px;
-		height: 40px;
-		background-image: url(coding_advanced\img\burger.svg);
-		background-size: 24px;
-		background-position: center;
-		background-repeat: no-repeat;
-		margin: 0 0 0 80px;
-		border-radius: 4px;
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
 	}
-	.burger :hover{
-		background-color: #ddd;
+	
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
 	}
-
-	.icon span {
-		position: absolute;
-		left: 15px;
-		width: 30px;
-		height: 4px;
-		background-color: white;
-		border-radius: 8px;
-		transition: ease 0.75s;
+	
+	.header-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 10px;
+		background-color: gainsboro;
+		color: black;
 	}
-	.icon span:nth-last-of-type(1) {
-		top: 16px;
+	
+	.header-title {
+		margin: 0;
 	}
-	.icon span:nth-last-of-type(2){
-		top: 28px;
+	
+	.header-nav {
+		display: none;
 	}
-	.icon span:nth-last-of-type(3){
-		bottom: 28px;
+	
+	.header-nav-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
 	}
-	.close span:nth-of-type(1) {
-		transform: rotate(45deg);
-		top: 28px;
-	}
-	.close span:nth-of-type(2) {
-		opacity: 0;
-	}
-	.close span:nth-of-type(3) {
-		transform: rotate(-45deg);
-		top: 28px;
-	}
-	.sm-nav {
-		top: 60px;
-		left: 0px;
-		position: absolute;
-		z-index: 10;
-		width: 100%;
-		background-color: darkgray;
-	}
+	
 	.header-nav-item {
+		margin-left: 20px;
+	}
+	
+	.header-nav-item-link,
+	header-nav-item form,
+	header-nav-item button {
+		color: black;
+		text-decoration: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+	.burger-border{
+		border: ridge;
+		border-color: rgba(169, 169, 169, 0.408);
+		height: 58px;
+		width: 70px;
+		position: relative;
+	}
+	.burger {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 30px;
+		height: 21px;
+		cursor: pointer;
+		position: absolute;
+		top: 31%;
+		left: 31%;
+	}
+	
+	.burger span {
+		display: block;
+		height: 3px;
+		background: rgb(141, 141, 141);
+		border-radius: 3px;
+	}
+	.header-nav {
+		display: none;
+		position: absolute;
+		top: 50px;
+		right: 0;
+		background-color: gainsboro;
+		width: 100%;
+	}
+	.header-nav.active {
+		display: block;
+	}
+	.header-nav-list {
 		flex-direction: column;
 	}
-	.header-nav-item-link{
+	.header-nav-item{
 		text-align: center;
-		border-top: solid 0.5px rgba(255, 255, 255, 0.6);
+		padding: 10px 0;
 	}
-	.contents {
-		width: 100%;
+	.header-nav-item a{
+		color: darkgray;
 	}
-	.slider ul{
-		position: relative;
-		z-index: 1;
-		height: 100vh;
+	.header-nav-item-link span{
+		color: #333;
+	}
+	.header-nav-item-search {
+		display: flex;
+		padding: 10px 0;
+		margin-left: 20px;
+	}
+	.slider-1 {
+		display: none;
+	}
+	.slider {
+		width: 94%;
+		margin: 0 auto;
 	}
 	.slider img {
-		width: 100%;
-		height: 100vh;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-
+		width:100%;
+		height:100%;
 	}
-	.slider .sluck-slide {
-		margin: 0 10px;
+	
+	.slider .slick-slide {
+		margin:0 10px;
 	}
-	.slick-prev,
+	
+	.slick-prev, 
 	.slick-next {
 		position: absolute;
-		z-index: 3;
 		top: 42%;
 		cursor: pointer;
 		outline: none;
 		border-top: 2px solid #666;
 		border-right: 2px solid #666;
-		height: 25px;
-		width: 25px;
+		height: 15px;
+		width: 15px;
 	}
+	
 	.slick-prev {
-		left: 2.5%;
+		left: -1.5%;
 		transform: rotate(-135deg);
 	}
+	
 	.slick-next {
-		right: 2.5%;
+		right: -1.5%;
 		transform: rotate(45deg);
 	}
+	
 	.slick-dots {
-		position: relative;
-		z-index: 3;
-		text-align: center;
-		margin: -50px 0 0 0;
+		text-align:center;
+	  margin:20px 0 0 0;
 	}
-	.slick-dots li{
-		display: inline-block;
-		margin: 0.5px;
+	
+	.slick-dots li {
+		display:inline-block;
+	  margin:0 5px;
 	}
-	.slick-dots button{
+	
+	.slick-dots button {
 		color: transparent;
 		outline: none;
-		width: 8px;
-		height: 8px;
-		display: block;
-		border-radius: 50%;
-		background: #ccc;
+		width:8px;
+		height:8px;
+		display:block;
+		border-radius:50%;
+		background:#ccc;
 	}
+	
 	.slick-dots .slick-active button{
-		background: #333;
+		background:#333;
 	}
+	
+	
+	/*========= レイアウトのためのCSS ===============*/
+	
+	body{
+	  background:#eee;
+	}
+	ul{
+	  margin:0;
+	  padding: 0;
+	  list-style: none;
+	}
+	
 	a:hover,
 	a:active{
-		text-decoration: none;
+	  text-decoration: none;
 	}
-	.slider{
-		position: relative;
-	}
-.main-contents {
-		padding-right: 350px;
-		padding-left: 350px;
+	
+	.main-contents {
+		margin: 0 20% 0 20%;
 		text-align: center;
 	}
 	.main-contents h1{
@@ -374,9 +433,16 @@ footer li {
 		font-size: 20px;
 		background-color: rgb(241, 177, 161);
 	}
+	.message-point li{
+		margin-top: 20px;
+	}
 	.message {
 		padding-bottom: 40px;
 	}
+	.dishes-message p{
+		margin-top: 20px;
+	}
+
 	.message-point li {
 		margin-bottom: 10px;
 		font-size: 15px;
@@ -389,6 +455,8 @@ footer li {
 	.dishes {
 		padding-bottom: 50px;
 		padding-left: 30px;
+		opacity: 0;
+		transition: all 2s;
 	}
 	
 	h3 {
@@ -397,24 +465,28 @@ footer li {
 		margin-bottom: 20px;
 	}
 	
+	.dishes-message {
+		display: flex;
+		flex-direction: column;
+	}
+	
 	.dishes-message img {
-		width: 450px;
-		height: 350px;
+		width: 100%;
+		height: 100%;
 	}
-	
-	.dishes-message p {
-		margin-left: 40px;
-		margin-top: 20px;
-	}
-	
+
 	.address {
 		display: flex;
+		flex-direction: column;
+		margin-bottom: 30px;
 		background-color: black;
 		color: white;
+		opacity: 0;
+		transition: all 2s;
 	}
 	.address h3 {
-		padding-top: 40px;
-		padding-left: 30px;
+		padding-top: 10px;
+		padding-left: 10px;
 	}
 	.address ul {
 		padding-left: 10px;
@@ -423,32 +495,22 @@ footer li {
 		margin-bottom: 10px;
 	}
 	.large {
-		font-size: 20px;
+		font-size: 15px;
 		font-weight: bold;
 		padding-left: 10px;
 	}
 	.address img {
-		width: 360px;
-		height: 250px;
-		margin: 20px 0px 20px 150px;
+		width: 100%;
+		height: 100%;
 	}
-	.shops h2 {
-		font-size: 30px;
-		margin: 20px 0 20px 0;
-		text-align: center;
-	}
-	.shopspic {
-		display: flex;
-		padding-bottom: 40px;
-	}
-	.shop img {
-		width:150px;
-		height: 150px;
-		border-radius: 100%;
-		margin: 0 80px 0 10px;
+	.shops {
+		display: none;
 	}
 	.fa-solid fa-location-dot {
 		font-size: 50px;
+	}
+	.fadeIn {
+		opacity: 1;
 	}
 	footer {
 		height: 100px;
@@ -465,5 +527,9 @@ footer li {
 	
 	footer li {
 		margin-left: 30px;
+	}
+	
+	.sm-nav{
+		display: none;
 	}
 }
