@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="./coding_advanced/css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
@@ -51,17 +52,17 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    aaa<!--<img src="coding_advanced/img/food.jpg" alt="food-pic-1" class="picture1">-->
+                    <img src="coding_advanced\img\interior.jpg" alt="pic-1">
                 </div>
                 <div class="swiper-slide">
-                    bbb<!--<img src="coding_advanced\img\food2.jpg" alt="food-pic-2" class="picture2">-->
+                    <img src="coding_advanced\img\restaurant.jpg" alt="pic-2">
                 </div>
                 <div class="swiper-slide">
-                    ccc<!--<img src="coding_advanced\img\food3.jpg" alt="food-pic-3" class="picture3">-->
+                    <img src="coding_advanced\img\food.jpg" alt="pic-3">
                 </div>
-                <!--<div class="swiper-slide">
-                    ddd<img src="coding_advanced\img\food4.jpg" alt="food-pic-4" class="picture4">
-                </div>-->
+                <div class="swiper-slide">
+                    <img src="coding_advanced\img\food2.jpg" alt="pic-4">
+                </div>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
@@ -69,13 +70,13 @@
         </div>
         <script>
             const swiper = new Swiper(".swiper",{
-                slidePerView: 2,
+                slidesPerView: 1,
                 breakpoints: {
                     540: {
-                        slidesPerView: 1,
-                    }
+                        slidesPerView: 2,
+                    },
                 },
-                pagenation: {
+                pagination: {
                     el: ".swiper-pagination"
                 },
 

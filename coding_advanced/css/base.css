@@ -34,6 +34,8 @@ body {
 }
 header {
 	width: 100%;
+	position: relative;
+	z-index: 2;
 }
 .header-inner {
 	height: 60px;
@@ -66,17 +68,12 @@ header {
 	flex-wrap: wrap;
 	text-align: center;
 }
-
-.header-nav-item {
-	margin-left:30px;
-	text-align: center;
-}
 .header-nav-item-link span{
 	color: #333;
 }
 .header-nav-item-search {
 	display: flex;
-	margin-left: 20px;
+	padding-left: 20px;
 }
 
 .header-nav-item a {
@@ -100,58 +97,44 @@ button {
 .contents {
 	background-color: antiquewhite;
 }
-.swiper-wrapper{
+.swiper{
+	margin-top: 60px;
 	width: 100%;
-	height: 300px !important;
+	height: 550px;
+	object-fit: cover;
 }
-
-.swiper-slide {
-	color: #ffff;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	line-height: 300px;
-	text-align: center;
-}
-
-.swiper-slide:nth-child(3n + 1) {
-	background-color: #de4439;
-}
-  
-.swiper-slide:nth-child(3n + 2) {
-	background-color: #fcd500;
-}
-  
-.swiper-slide:nth-child(3n + 3) {
-	background-color: #53c638;
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
 }
 
 .swiper-button-prev {
-	margin: 0;
-	top: 0;
-	left: 50%;
-	transform: translate(-50%, 0px) rotate(90deg);
+    margin: 0;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
 }
+
 .swiper-button-next {
-	margin:0;
-	bottom: 0px;
-	top: initial;
-	left: 50%;
-	transform: translate(-50%, 0px) rotate(90deg);
+    margin: 0;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
 }
+
 .swiper-pagination-bullets {
-	width: 100%;
+    width: 100%;
 }
 
 .swiper-pagination-bullet {
-	width: 12px !important;
-	height: 12px !important;
-	margin: 0 0 0 10px !important;
-	background: #333;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 0 0 10px !important;
+    background: #333;
 }
-  
+
 .swiper-pagination-bullet:first-child {
-	margin: 0 !important;
+    margin: 0 !important;
 }
 .main-contents {
 	margin: 0 20% 0 20%;
@@ -318,10 +301,6 @@ footer li {
 		display: flex;
 	}
 	
-	.header-nav-item {
-		margin-left: 20px;
-	}
-	
 	.header-nav-item-link,
 	header-nav-item form,
 	header-nav-item button {
@@ -371,7 +350,6 @@ footer li {
 		flex-direction: column;
 	}
 	.header-nav-item{
-		text-align: center;
 		padding: 10px 0;
 	}
 	.header-nav-item a{
@@ -381,89 +359,10 @@ footer li {
 		color: #333;
 	}
 	.header-nav-item-search {
+		display: block;
 		display: flex;
 		padding: 10px 0;
-		margin-left: 20px;
-	}
-	.slider-1 {
-		display: none;
-	}
-	.slider {
-		width: 94%;
-		margin: 0 auto;
-	}
-	.slider img {
-		width:100%;
-		height:100%;
-	}
-	
-	.slider .slick-slide {
-		margin:0 10px;
-	}
-	
-	.slick-prev, 
-	.slick-next {
-		position: absolute;
-		top: 42%;
-		cursor: pointer;
-		outline: none;
-		border-top: 2px solid #666;
-		border-right: 2px solid #666;
-		height: 15px;
-		width: 15px;
-	}
-	
-	.slick-prev {
-		left: -1.5%;
-		transform: rotate(-135deg);
-	}
-	
-	.slick-next {
-		right: -1.5%;
-		transform: rotate(45deg);
-	}
-	
-	.slick-dots {
-		text-align:center;
-	  margin:20px 0 0 0;
-	}
-	
-	.slick-dots li {
-		display:inline-block;
-	  margin:0 5px;
-	}
-	
-	.slick-dots button {
-		color: transparent;
-		outline: none;
-		width:8px;
-		height:8px;
-		display:block;
-		border-radius:50%;
-		background:#ccc;
-	}
-	
-	.slick-dots .slick-active button{
-		background:#333;
-	}
-	
-	
-	/*========= レイアウトのためのCSS ===============*/
-	
-	body{
-	  background:#eee;
-	}
-	ul{
-	  margin:0;
-	  padding: 0;
-	  list-style: none;
-	}
-	
-	a:hover,
-	a:active{
-	  text-decoration: none;
-	}
-	
+	}	
 	.main-contents {
 		margin: 0 20% 0 20%;
 		text-align: center;
