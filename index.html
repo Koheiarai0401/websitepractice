@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./coding_advanced/css/base.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -47,24 +48,42 @@
         </div>
     </header>
     <div class="contents">
-        <ul class="slider">
-            <li><img src="coding_advanced/img/food.jpg" alt="food-pic-1" class="picture1"></li>
-            <li><img src="coding_advanced\img\food2.jpg" alt="food-pic-2" class="picture2"></li>
-            <li><img src="coding_advanced\img\food3.jpg" alt="food-pic-3" class="picture3"></li>
-            <li><img src="coding_advanced\img\food4.jpg" alt="food-pic-4" class="picture4"></li>
-        </ul>
-        <button class="slick-prev"></button>
-        <button class="slick-next"></button>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    aaa<!--<img src="coding_advanced/img/food.jpg" alt="food-pic-1" class="picture1">-->
+                </div>
+                <div class="swiper-slide">
+                    bbb<!--<img src="coding_advanced\img\food2.jpg" alt="food-pic-2" class="picture2">-->
+                </div>
+                <div class="swiper-slide">
+                    ccc<!--<img src="coding_advanced\img\food3.jpg" alt="food-pic-3" class="picture3">-->
+                </div>
+                <!--<div class="swiper-slide">
+                    ddd<img src="coding_advanced\img\food4.jpg" alt="food-pic-4" class="picture4">
+                </div>-->
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
         <script>
-  $('.slider').slick({
-    autoplay: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    prevArrow: '<div class="slick-prev"></div>',
-    nextArrow: '<div class="slick-next"></div>',
-    dots: true,
-    });
+            const swiper = new Swiper(".swiper",{
+                slidePerView: 2,
+                breakpoints: {
+                    540: {
+                        slidesPerView: 1,
+                    }
+                },
+                pagenation: {
+                    el: ".swiper-pagination"
+                },
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                }
+            });
         </script>
         <div class="main-contents">
             <h1>新型コロナウイルスに対する取り組みの最新情報をご案内</h1>
