@@ -149,6 +149,9 @@ button {
 	font-size: 20px;
 	background-color: rgb(241, 177, 161);
 }
+.message-point ul{
+	display: none;
+}
 .message {
 	padding-bottom: 40px;
 }
@@ -163,15 +166,16 @@ button {
 
 .dishes {
 	padding-bottom: 50px;
-	padding-left: 30px;
 	opacity: 0;
 	transition: all 2s;
+	text-align: center;
 }
 
 h3 {
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 20px;
+
 }
 
 .dishes-message {
@@ -216,6 +220,7 @@ h3 {
 	height: 50%;
 }
 .shops {
+	text-align: center;
 	width: 100%;
 	opacity: 0;
 	transition: all 2s;
@@ -227,6 +232,7 @@ h3 {
 }
 .shopspic {
 	display: flex;
+	justify-content: center;
 	padding-bottom: 40px;
 	flex-wrap: wrap;
 }
@@ -397,7 +403,7 @@ footer li {
 	
 	.dishes {
 		padding-bottom: 50px;
-		padding-left: 30px;
+		text-align: center;
 		opacity: 0;
 		transition: all 2s;
 	}

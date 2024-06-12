@@ -90,7 +90,7 @@
             <h1>新型コロナウイルスに対する取り組みの最新情報をご案内</h1>
             <div class="message">
                 <div class="message-point">
-                    <h2 ><span class="toggle-button">■衛生面に関して</span></h2>
+                    <h2 class="toggle-button">■衛生面に関して</h2>
                     <ul>
                         <li>・マスクを着用しての接客</li>
                         <li>・出勤前の検温の徹底</li>
@@ -101,7 +101,7 @@
                     </ul>
                 </div>
                 <div class="message-point">
-                    <h2><span class="toggle-button">■お客様へのご協力のお願い</span></h2>
+                    <h2 class="toggle-button">■お客様へのご協力のお願い</h2>
                     <ul>
                         <li>・店内では、飲食時以外のマスク着用をお願いいたします</li>
                         <li>・入店時の手指の消毒にご協力ください</li>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="message-point">
                     <div class="service">
-                        <h2><span class="toggle-button">■サービスに関して</span></h2>
+                        <h2 class="toggle-button">■サービスに関して</h2>
                         <ul>
                             <li>・直接お渡しする商品の提供、金銭授受時にグローブの着用</li>
                             <li>・ドリンクやフードのサンプリング中止</li>
@@ -145,11 +145,11 @@
                     </div>
                 </div>
                 <script>
-                    $(document).ready(function() {
-                        $('.toggle-button').on('click', function() {
-                            $(this).closest('.message-point').find('ul').slideToggle();
-                        });
+                $(document).ready(function() {
+                    $('.toggle-button').on('click', function() {
+                        $(this).closest('.message-point').find('ul').slideToggle();
                     });
+                });
                 </script>
             </div>
             <div class="address">
